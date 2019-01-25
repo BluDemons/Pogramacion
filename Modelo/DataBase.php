@@ -48,6 +48,22 @@
             }
     
         }
+
+        public function buscarProducto($nombre){
+            $array = null;
+            $modelo = new Conexion();
+            $conexion = $modelo->get_conexion();
+            $nombre = "%".$nombre."%";
+            $sql = "select * from producto where nombre like :nombre";
+            $statement = $conexion->prepare($sql);
+            $statement ->bindParam(':nombre',$nombre);
+            $statement->execute();
+            while($resultado = $statement->fetch()){
+                $array[] =$resultado;
+            }
+            return $array;
+            
+        }
       
     }
 ?>
