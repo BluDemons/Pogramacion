@@ -64,6 +64,33 @@
             return $array;
             
         }
+        public function obtenerProducto($id){
+            $array = null;
+            $modelo = new Conexion();
+            $conexion = $modelo->get_conexion();
+            $sql = "select * from producto where id = :id";
+            $statement = $conexion->prepare($sql);
+            $statement->bindParam(':id',$id);
+            $statement->execute();
+            while($resultado = $statement->fetch()){
+                $array[] =$resultado;
+            }
+            return $array;
+        }
+        public function modificarProducto($campo,$valor,$id){
+            $modelo = new Conexion();
+            $conexion = $modelo->get_conexion();
+            $sql = "update producto set  $campo = :valor where id = :id";
+            $statement = $conexion->prepare($sql);
+            $statement->bindParam(':valor',$valor);
+            $statement->bindParam(':id',$id);
+            if(!$statement){
+                return "No se puede modificar";
+            }else{
+                $statement->execute();
+                return "El registro fue modificado exitosamente";
+            }
+        }
       
     }
 ?>

@@ -16,6 +16,8 @@
                         echo"<td>".$fila['categoria']."</td>";
                         echo"<td>".$fila['precio']."</td>";
                         echo"<td><a  href = 'Controlador/eliminar.php?id=".$fila['id']."'>Eliminar</td>";
+                        echo"<td><a  href = 'modificar.php?id=".$fila['id']."'>Modificar</td>";
+
                         echo"</tr>";
 
                 }
