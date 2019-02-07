@@ -5,10 +5,11 @@
 
     </head>
     <body>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         <h1>INSERTAR EMPLEADO</h1>
         <form method="post" action="ControladorEmpleado/insertarE.php">
             <div class="container-fluid">
-            <table border = 1  bordercolor=blue class="table table-hover text-centered">
+            <table border = 1  bordercolor=blue>
                 <tr>
                     <td>Nombre</td>
                     <td><input type="texto" name="nombre"></td>
@@ -27,7 +28,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="submit" value="Guardar"></td>
+                    <td><input class="btn btn-info" type="submit" value="Guardar"></td>
                 </tr>
                 
             </table>
